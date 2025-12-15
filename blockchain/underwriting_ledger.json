@@ -1,0 +1,36 @@
+[
+  {
+    "data": {
+      "agent": "underwritingAgent",
+      "action": "evaluateRiskAndPrice",
+      "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+      "decision": "eligible",
+      "offer": {
+        "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+        "loanAmount": 20000,
+        "interestRate": 3.5,
+        "term": 36
+      },
+      "timestamp": "2025-12-15T09:37:29.302Z"
+    },
+    "previousHash": "0",
+    "hash": "669827a6b1d13bd78cba8a7aceaad278064c1628182a6e73f901f5cdeda0d020"
+  },
+  {
+    "data": {
+      "agent": "underwritingAgent",
+      "action": "evaluateRiskAndPrice",
+      "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+      "decision": "eligible",
+      "offer": {
+        "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+        "loanAmount": 2000,
+        "interestRate": 3.5,
+        "term": 36
+      },
+      "timestamp": "2025-12-15T13:01:33.830Z"
+    },
+    "previousHash": "669827a6b1d13bd78cba8a7aceaad278064c1628182a6e73f901f5cdeda0d020",
+    "hash": "82e17605eb43cd1c1b90943bddceda59dc0ad43b2635f926aff280218574577c"
+  }
+]

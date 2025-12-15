@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFSI Loan Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>BFSI Loan System</h1>
+    </header>
+    <main>
+        <section id="loan-application">
+            <h2>Apply for Loan</h2>
+            <form id="loan-form">
+                <input type="text" id="user-message" placeholder="Type your loan request, e.g., 'I need a loan'" required>
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="pan" placeholder="PAN Number" required>
+                <input type="text" id="aadhaar" placeholder="Aadhaar Number" required>
+                <input type="number" id="cibil" placeholder="CIBIL Score" required>
+                <input type="number" id="income" placeholder="Monthly Income" required>
+                <select id="employment-type" required>
+                    <option value="" disabled selected>Employment Type</option>
+                    <option value="salaried">Salaried</option>
+                    <option value="self-employed">Self-Employed</option>
+                </select>
+                <input type="text" id="city" placeholder="City" required>
+                <input type="number" id="loan-amount" placeholder="Loan Amount" required>
+                <button type="submit" id="apply-btn">Submit Application</button>
+            </form>
+            <div id="loader" class="hidden"></div>
+        </section>
+
+        <section id="verification-status">
+            <h2>Verification Status</h2>
+            <div id="status-display">
+                <p>Submit the form to see verification status.</p>
+            </div>
+        </section>
+
+        <section id="loan-result">
+            <h2>Loan Result</h2>
+            <div id="result-display">
+                <pre><code></code></pre>
+            </div>
+        </section>
+
+        <section id="audit-trail" class="hidden">
+            <h2>Blockchain Audit Trail</h2>
+            <ul id="cid-list"></ul>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

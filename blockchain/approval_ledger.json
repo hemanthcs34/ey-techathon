@@ -1,0 +1,24 @@
+[
+  {
+    "data": {
+      "agent": "approvalAgent",
+      "action": "executeApproval",
+      "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+      "approvalHash": "fbc1e0591db01cd4af1c03a017029c48c58e1bf966925448fe8f6da3ac6f6687",
+      "timestamp": "2025-12-15T09:37:29.316Z"
+    },
+    "previousHash": "0",
+    "hash": "9401bb70742c976e6a1d480cb176af809ba775feac4bcfd0ee0e332723d72ffe"
+  },
+  {
+    "data": {
+      "agent": "approvalAgent",
+      "action": "executeApproval",
+      "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+      "approvalHash": "d5365ca90ee0e3152db48a8beec50d53511d74f5f48cb9135a3f988f13c20cab",
+      "timestamp": "2025-12-15T13:01:33.832Z"
+    },
+    "previousHash": "9401bb70742c976e6a1d480cb176af809ba775feac4bcfd0ee0e332723d72ffe",
+    "hash": "9eaad6830dada5a588010d4867c45ec8f3525192ba2c90b887e9669b8d9a4235"
+  }
+]

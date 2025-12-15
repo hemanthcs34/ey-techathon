@@ -1,0 +1,28 @@
+[
+  {
+    "data": {
+      "agent": "disbursementAgent",
+      "action": "disburseFunds",
+      "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+      "loanId": "3dd23136db97206df4165d0fa55b026f3b5bc07f07b4f8a5ed41204c9e27b6b2",
+      "transactionId": "81e22625ca2f833895e5d7929b8517a92e0d4cb04318edf52c833000acd63195",
+      "amount": 20000,
+      "timestamp": "2025-12-15T09:37:29.318Z"
+    },
+    "previousHash": "0",
+    "hash": "c77f7834c2c2004d5a4b8b04e9b6851bcb7a337f6f347b90593dfe38c9b29910"
+  },
+  {
+    "data": {
+      "agent": "disbursementAgent",
+      "action": "disburseFunds",
+      "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+      "loanId": "395d410ff30619fc1614fb34e269878e67a10da4814973428e9e2fe90c6d7640",
+      "transactionId": "68883c9c6a6d92f0d4260f60e4ad71b14409b82c509ae58bb2f7d9c40bf37e24",
+      "amount": 2000,
+      "timestamp": "2025-12-15T13:01:33.834Z"
+    },
+    "previousHash": "c77f7834c2c2004d5a4b8b04e9b6851bcb7a337f6f347b90593dfe38c9b29910",
+    "hash": "7c83346a4dbb7a2c006ed2576ac92c9f8091b9fc784c43ce99618e2cc4f14bc2"
+  }
+]

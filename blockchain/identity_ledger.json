@@ -1,0 +1,26 @@
+[
+  {
+    "data": {
+      "agent": "verificationAgent",
+      "action": "verifyKYC",
+      "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+      "kycDocumentHash": "2730a74a2e5607e57aa0e74583adec11a2f3a11660e03bbf5b80a83be6d292a0",
+      "kycStatus": "verified",
+      "timestamp": "2025-12-15T09:37:29.299Z"
+    },
+    "previousHash": "0",
+    "hash": "d39896cfc0e0e378ca93410235bcc93c1d1ea0580c910eaaf230ae9fa49e6204"
+  },
+  {
+    "data": {
+      "agent": "verificationAgent",
+      "action": "verifyKYC",
+      "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+      "kycDocumentHash": "2e84f3e5db9cec96a70a46a8cc120d08ce075dc49749e2c40e6b236532559f49",
+      "kycStatus": "verified",
+      "timestamp": "2025-12-15T13:01:33.823Z"
+    },
+    "previousHash": "d39896cfc0e0e378ca93410235bcc93c1d1ea0580c910eaaf230ae9fa49e6204",
+    "hash": "db5c83408b551b38217839dc4331aaa2cfb0b11c20d3baf37d7b4c22776148ab"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "data": {
+      "agent": "monitoringAgent",
+      "action": "logEmiPayment",
+      "loanId": "3dd23136db97206df4165d0fa55b026f3b5bc07f07b4f8a5ed41204c9e27b6b2",
+      "paymentId": "d5a4816d763ec1073a646ef68c1d698ba6e067f9c6d01fde6fc652cca6cae9e2",
+      "amount": 600,
+      "paymentDate": "2025-12-25",
+      "timestamp": "2025-12-15T09:53:39.563Z"
+    },
+    "previousHash": "0",
+    "hash": "d0d196c4e79b0f7c25f6edbd13a87b13e20c16bb4a5857c4a4b0c666d6bee33b"
+  }
+]

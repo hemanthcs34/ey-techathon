@@ -1,0 +1,90 @@
+[
+  {
+    "data": {
+      "agent": "masterAgent",
+      "action": "detectLoanIntent",
+      "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+      "intent": "loanApplication",
+      "timestamp": "2025-12-15T09:37:29.294Z"
+    },
+    "previousHash": "0",
+    "hash": "e015696bed015aef50a2c973baa50143e12583158bd9ee4b5f71cbc7eed73114"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "captureData",
+      "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+      "capturedData": {
+        "income": 80000,
+        "employmentType": "salaried",
+        "loanAmount": 20000,
+        "city": "San Francisco"
+      },
+      "timestamp": "2025-12-15T09:37:29.298Z"
+    },
+    "previousHash": "e015696bed015aef50a2c973baa50143e12583158bd9ee4b5f71cbc7eed73114",
+    "hash": "2ebfc4fbe34016d588ab1324f196cff623607a961c011eb6612efc4ae720ebbb"
+  },
+  {
+    "data": {
+      "agent": "masterAgent",
+      "action": "presentAndNegotiateOffer",
+      "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+      "offer": {
+        "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+        "loanAmount": 20000,
+        "interestRate": 3.5,
+        "term": 36,
+        "userResponse": "accepted"
+      },
+      "timestamp": "2025-12-15T09:37:29.315Z"
+    },
+    "previousHash": "2ebfc4fbe34016d588ab1324f196cff623607a961c011eb6612efc4ae720ebbb",
+    "hash": "ad9db1e80dfd23487b2a0f53c5ee42ccdb8df44262a0cc70623552e9b656ca16"
+  },
+  {
+    "data": {
+      "agent": "masterAgent",
+      "action": "detectLoanIntent",
+      "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+      "intent": "loanApplication",
+      "timestamp": "2025-12-15T13:01:33.818Z"
+    },
+    "previousHash": "ad9db1e80dfd23487b2a0f53c5ee42ccdb8df44262a0cc70623552e9b656ca16",
+    "hash": "9bd3d9906d9aa52dcfb6baf46dd09694805e99ca08bd8895aea8d1383575861b"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "captureData",
+      "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+      "capturedData": {
+        "income": 8000,
+        "employmentType": "salaried",
+        "loanAmount": 2000,
+        "city": "San Francisco"
+      },
+      "timestamp": "2025-12-15T13:01:33.822Z"
+    },
+    "previousHash": "9bd3d9906d9aa52dcfb6baf46dd09694805e99ca08bd8895aea8d1383575861b",
+    "hash": "fb82e67e2e9e90deafcdcb2795b46cbf9314e0a0263075ff0ff27439f3b295e6"
+  },
+  {
+    "data": {
+      "agent": "masterAgent",
+      "action": "presentAndNegotiateOffer",
+      "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+      "offer": {
+        "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+        "loanAmount": 2000,
+        "interestRate": 3.5,
+        "term": 36,
+        "userResponse": "accepted"
+      },
+      "timestamp": "2025-12-15T13:01:33.831Z"
+    },
+    "previousHash": "fb82e67e2e9e90deafcdcb2795b46cbf9314e0a0263075ff0ff27439f3b295e6",
+    "hash": "55f4ef1777b4e2f791b9ad6677388bf5a6d7321eefdf168ba66d4911893aa0de"
+  }
+]

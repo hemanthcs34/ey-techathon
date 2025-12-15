@@ -1,0 +1,40 @@
+[
+  {
+    "data": {
+      "agentIds": [
+        "masterAgent",
+        "dataAgent",
+        "verificationAgent",
+        "creditAgent",
+        "underwritingAgent",
+        "approvalAgent",
+        "documentAgent"
+      ],
+      "action": "generateSanctionLetter",
+      "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+      "sanctionHash": "b36b52fe65dc7259f48a0842aab4c3dd6ccc8aac5c9fa22b62837e49fc2d5ac8",
+      "timestamp": "2025-12-15T09:37:29.316Z"
+    },
+    "previousHash": "0",
+    "hash": "ecdc91b619c386411d12c01eaf51cf3eb2ee54ef57ad10bd60476d6b280b537e"
+  },
+  {
+    "data": {
+      "agentIds": [
+        "masterAgent",
+        "dataAgent",
+        "verificationAgent",
+        "creditAgent",
+        "underwritingAgent",
+        "approvalAgent",
+        "documentAgent"
+      ],
+      "action": "generateSanctionLetter",
+      "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+      "sanctionHash": "e803589e216b84a510fc496a2471dd950a14861617c1cacdf7a3f488f30019c4",
+      "timestamp": "2025-12-15T13:01:33.834Z"
+    },
+    "previousHash": "ecdc91b619c386411d12c01eaf51cf3eb2ee54ef57ad10bd60476d6b280b537e",
+    "hash": "4067e0b322bf8b33b539056195c5c12bfecff2c1500b611dce14d9f5b01fc852"
+  }
+]

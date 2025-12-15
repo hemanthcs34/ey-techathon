@@ -1,0 +1,22 @@
+[
+  {
+    "data": {
+      "agent": "creditAgent",
+      "action": "analyzeCredit",
+      "decisionHash": "4e06f5115ac7ecdbec11f206ea62fce1f1709ed3a64d582ffbd7b58d0c545de6",
+      "timestamp": "2025-12-15T09:37:29.301Z"
+    },
+    "previousHash": "0",
+    "hash": "b6e0bf506c244c28d779c38b496b782ae7dcdd57cf0dc98e501a3505c7f03302"
+  },
+  {
+    "data": {
+      "agent": "creditAgent",
+      "action": "analyzeCredit",
+      "decisionHash": "b5f32aadbef6b2aec88d205967b438103cbeb491eee848501e14aabae32783d4",
+      "timestamp": "2025-12-15T13:01:33.828Z"
+    },
+    "previousHash": "b6e0bf506c244c28d779c38b496b782ae7dcdd57cf0dc98e501a3505c7f03302",
+    "hash": "c6b41c233a34bac1666b8612fb2ec490d3e393e23dad8d045c2baa067321654f"
+  }
+]

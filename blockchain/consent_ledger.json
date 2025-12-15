@@ -1,0 +1,24 @@
+[
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "collectUserData",
+      "sessionId": "1ed0826aa8c7bcd8eb91a9e054b3c0e16bf264ea5293e8921db93823a54f429b",
+      "consentHash": "d916e78b0dc952f640c319743a3784381482ca2228f9582009b60f55c265848b",
+      "timestamp": "2025-12-15T09:37:29.296Z"
+    },
+    "previousHash": "0",
+    "hash": "b9216f93fef38e017582a2c5709ebdba955bfd9ad510472b34930a08fb428956"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "collectUserData",
+      "sessionId": "635a4930c0eab1e61a8078734cda282914910cba105243f4037e76d2c7662185",
+      "consentHash": "15ee294dc990a690fe34f2ee8db4c7b989c75ddd735dfd6b349f97921f3dd710",
+      "timestamp": "2025-12-15T13:01:33.820Z"
+    },
+    "previousHash": "b9216f93fef38e017582a2c5709ebdba955bfd9ad510472b34930a08fb428956",
+    "hash": "661d4e7759dc5ab5c154663ea076d92b7aafa9630a0f52e8a8cf619f4d8daf0a"
+  }
+]
