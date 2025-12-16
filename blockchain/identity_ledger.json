@@ -22,5 +22,33 @@
     },
     "previousHash": "d39896cfc0e0e378ca93410235bcc93c1d1ea0580c910eaaf230ae9fa49e6204",
     "hash": "db5c83408b551b38217839dc4331aaa2cfb0b11c20d3baf37d7b4c22776148ab"
+  },
+  {
+    "data": {
+      "agent": "verificationAgent",
+      "action": "verifyKYC",
+      "sessionId": "4c3c2be829451ead9a46843db3870dcaced5cfd6378da919b7097a70dbe70528",
+      "kycDocumentHash": "64fac2ec4ee17925ae4d749eb0de76bb0c25120ab464001ea665addc07595b44",
+      "kycStatus": "rejected",
+      "reason": "PAN is invalid. It must be 10 characters long, starting with 5 uppercase letters, followed by 4 digits, and ending with 1 uppercase letter. The provided PAN 'asd65412241' has an incorrect format and length.",
+      "timestamp": "2025-12-16T17:29:24.409Z",
+      "cid": "QmUF2bFJTZfTEabMi8mzx6zUQ2gbfnUKsPSsTMU6wGyY3t"
+    },
+    "previousHash": "db5c83408b551b38217839dc4331aaa2cfb0b11c20d3baf37d7b4c22776148ab",
+    "hash": "8be34039bdd00284a246238b3ff9a6d1ba02793d213cfcb63c067343e1039052"
+  },
+  {
+    "data": {
+      "agent": "verificationAgent",
+      "action": "verifyKYC",
+      "sessionId": "169bd3d651d8d8cee5013aefba0ba093d2b4b519700b7f3fd5aaf771685a7c7d",
+      "kycDocumentHash": "64fac2ec4ee17925ae4d749eb0de76bb0c25120ab464001ea665addc07595b44",
+      "kycStatus": "rejected",
+      "reason": "Invalid PAN format. PAN should be 10 characters long, starting with 5 uppercase letters, followed by 4 digits, and ending with 1 uppercase letter.",
+      "timestamp": "2025-12-16T17:45:53.776Z",
+      "cid": "QmazWGR9rhbrVVXRBqHP5tb5bquTTXE3DBfxUtX5ixuS9W"
+    },
+    "previousHash": "8be34039bdd00284a246238b3ff9a6d1ba02793d213cfcb63c067343e1039052",
+    "hash": "f4e674b29a98017b768b5a99a23e58477f77a5ba4e14099aac23f1f6b957d7cf"
   }
 ]

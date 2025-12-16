@@ -20,5 +20,65 @@
     },
     "previousHash": "b9216f93fef38e017582a2c5709ebdba955bfd9ad510472b34930a08fb428956",
     "hash": "661d4e7759dc5ab5c154663ea076d92b7aafa9630a0f52e8a8cf619f4d8daf0a"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "collectUserData",
+      "sessionId": "50c82fd7b48281104b9a085786bb18bb63103da9ef2d16ce39a1637b2fa36725",
+      "consent": {
+        "kyc": true,
+        "creditCheck": true
+      },
+      "timestamp": "2025-12-16T17:17:52.712Z",
+      "cid": "QmQgUAqhzak73LeMnETMVEYifwtWSCYsQwVEeZigHFxg68"
+    },
+    "previousHash": "661d4e7759dc5ab5c154663ea076d92b7aafa9630a0f52e8a8cf619f4d8daf0a",
+    "hash": "693e11624d4c395d71f94c79aea306da5cafc6902affa78b9e11b6e93b6ab0d3"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "collectUserData",
+      "sessionId": "5cddb3260290695da1e3769b6b16a100e901be63c2041a54a99605d7f3392f79",
+      "consent": {
+        "kyc": true,
+        "creditCheck": true
+      },
+      "timestamp": "2025-12-16T17:20:47.003Z",
+      "cid": "QmenWWn7RcBJAto1RnkBCfc5Uop7tptDjDsenoPo9h4f2A"
+    },
+    "previousHash": "693e11624d4c395d71f94c79aea306da5cafc6902affa78b9e11b6e93b6ab0d3",
+    "hash": "08a9eeb5d6a1748bd7665ecbfbe757be21fee9bde6a821aa0f5dfd4209947203"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "collectUserData",
+      "sessionId": "4c3c2be829451ead9a46843db3870dcaced5cfd6378da919b7097a70dbe70528",
+      "consent": {
+        "kyc": true,
+        "creditCheck": true
+      },
+      "timestamp": "2025-12-16T17:29:18.341Z",
+      "cid": "QmZefrb3WehfLF5QuESdt3CxTnjqRH9EoJNces53uHLcko"
+    },
+    "previousHash": "08a9eeb5d6a1748bd7665ecbfbe757be21fee9bde6a821aa0f5dfd4209947203",
+    "hash": "07bef6381eb317d9fab5297caa9d865e62981716884bfa74d42a5acf012d0171"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "collectUserData",
+      "sessionId": "169bd3d651d8d8cee5013aefba0ba093d2b4b519700b7f3fd5aaf771685a7c7d",
+      "consent": {
+        "kyc": true,
+        "creditCheck": true
+      },
+      "timestamp": "2025-12-16T17:45:33.673Z",
+      "cid": "QmeZhHS1en4DFe3JcAcWtuBqKEPbNHbtdKoCb1FjE82X5V"
+    },
+    "previousHash": "07bef6381eb317d9fab5297caa9d865e62981716884bfa74d42a5acf012d0171",
+    "hash": "0e8a134cd1df414348fbef79690c631256dcc780ebe117e3f8beeecf2faa53e0"
   }
 ]

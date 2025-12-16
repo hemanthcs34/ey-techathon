@@ -86,5 +86,125 @@
     },
     "previousHash": "fb82e67e2e9e90deafcdcb2795b46cbf9314e0a0263075ff0ff27439f3b295e6",
     "hash": "55f4ef1777b4e2f791b9ad6677388bf5a6d7321eefdf168ba66d4911893aa0de"
+  },
+  {
+    "data": {
+      "agent": "masterAgent",
+      "action": "detectLoanIntent",
+      "sessionId": "50c82fd7b48281104b9a085786bb18bb63103da9ef2d16ce39a1637b2fa36725",
+      "query": "i need a loan for i phone",
+      "intent": "loanApplication",
+      "cid": "QmWo2DceZtCfiNy6GoZahqB3DAtVN5ntLZHf8rAQEgDrAh",
+      "timestamp": "2025-12-16T17:17:51.895Z"
+    },
+    "previousHash": "55f4ef1777b4e2f791b9ad6677388bf5a6d7321eefdf168ba66d4911893aa0de",
+    "hash": "6123b1da027ad725035652720dc88ece3763c88976993c9037957fc7a3fbfb88"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "captureData",
+      "sessionId": "50c82fd7b48281104b9a085786bb18bb63103da9ef2d16ce39a1637b2fa36725",
+      "capturedData": {
+        "income": 50000,
+        "employmentType": "salaried",
+        "loanAmount": 100000,
+        "city": "murudeshwar"
+      },
+      "cid": "QmT7TJ9bojD2asTBRgoECDqNwPsEQH7jgwvfBB69X59Hum",
+      "timestamp": "2025-12-16T17:17:53.334Z"
+    },
+    "previousHash": "6123b1da027ad725035652720dc88ece3763c88976993c9037957fc7a3fbfb88",
+    "hash": "ab4b84a65fab2395edac9bbd710c0f9eba12fbe0c9ad389f04d15aca7c2b5bf0"
+  },
+  {
+    "data": {
+      "agent": "masterAgent",
+      "action": "detectLoanIntent",
+      "sessionId": "5cddb3260290695da1e3769b6b16a100e901be63c2041a54a99605d7f3392f79",
+      "query": "i need a loan for i phone",
+      "intent": "loanApplication",
+      "cid": "Qme68KztvTvNYAhpziWvaq43MEgnnJptUmijCStbL2zaEv",
+      "timestamp": "2025-12-16T17:20:46.212Z"
+    },
+    "previousHash": "ab4b84a65fab2395edac9bbd710c0f9eba12fbe0c9ad389f04d15aca7c2b5bf0",
+    "hash": "14cade6f0ee4bfcb95d8c28554d96ace24196c363d654ddc640f36ae672d84c6"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "captureData",
+      "sessionId": "5cddb3260290695da1e3769b6b16a100e901be63c2041a54a99605d7f3392f79",
+      "capturedData": {
+        "income": 50000,
+        "employmentType": "salaried",
+        "loanAmount": 100000,
+        "city": "murudeshwar"
+      },
+      "cid": "QmNW9qWFDGCFAYdgF6vw9BGbQxnq3ytRAr2BwgG9HuT4Fs",
+      "timestamp": "2025-12-16T17:20:47.918Z"
+    },
+    "previousHash": "14cade6f0ee4bfcb95d8c28554d96ace24196c363d654ddc640f36ae672d84c6",
+    "hash": "f45d9c2c3df43178735efd2a1c246cfb11055be1c55669d97b784d4ce9038ba6"
+  },
+  {
+    "data": {
+      "agent": "masterAgent",
+      "action": "detectLoanIntent",
+      "sessionId": "4c3c2be829451ead9a46843db3870dcaced5cfd6378da919b7097a70dbe70528",
+      "query": "i need a loan for i phone",
+      "intent": "loanApplication",
+      "cid": "QmPRVcyBG1gUg7DEPcXFmAPquErBcFaY3cJRqKPdENp4PP",
+      "timestamp": "2025-12-16T17:29:17.588Z"
+    },
+    "previousHash": "f45d9c2c3df43178735efd2a1c246cfb11055be1c55669d97b784d4ce9038ba6",
+    "hash": "42e5885cd0318bd9e3d91ab7a002a68638e00108dda2982998f035e9aef67e2f"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "captureData",
+      "sessionId": "4c3c2be829451ead9a46843db3870dcaced5cfd6378da919b7097a70dbe70528",
+      "capturedData": {
+        "income": 50000,
+        "employmentType": "salaried",
+        "loanAmount": 100000,
+        "city": "murudeshwar"
+      },
+      "cid": "QmPqSmqDGSctjhm71FMfeVwFcHJJzF9EcgK3jg1w8TYqXF",
+      "timestamp": "2025-12-16T17:29:19.094Z"
+    },
+    "previousHash": "42e5885cd0318bd9e3d91ab7a002a68638e00108dda2982998f035e9aef67e2f",
+    "hash": "d4680e1c0f845cf569dfa8eb84c3e4fc0b09747059b8a3c276a47efab68ce5d8"
+  },
+  {
+    "data": {
+      "agent": "masterAgent",
+      "action": "detectLoanIntent",
+      "sessionId": "169bd3d651d8d8cee5013aefba0ba093d2b4b519700b7f3fd5aaf771685a7c7d",
+      "query": "i need a loan for i phone",
+      "intent": "loanApplication",
+      "cid": "QmZaT3ScwTWZ29ZvJxGuxREidrLnhaVEc3m7y5zc2CCEAh",
+      "timestamp": "2025-12-16T17:45:32.916Z"
+    },
+    "previousHash": "d4680e1c0f845cf569dfa8eb84c3e4fc0b09747059b8a3c276a47efab68ce5d8",
+    "hash": "6e3b5a74daf1382c2158606697a3a9daaa28146748c1d39c06b6fad5f97061b7"
+  },
+  {
+    "data": {
+      "agent": "dataAgent",
+      "action": "captureData",
+      "sessionId": "169bd3d651d8d8cee5013aefba0ba093d2b4b519700b7f3fd5aaf771685a7c7d",
+      "capturedData": {
+        "income": 50000,
+        "employmentType": "salaried",
+        "loanAmount": 100000,
+        "city": "murudeshwar"
+      },
+      "cid": "QmeKwE2x4rDhzb4q5pSUEWXFfrUzieFSzPFNwmrGJ9NKDn",
+      "timestamp": "2025-12-16T17:45:34.450Z"
+    },
+    "previousHash": "6e3b5a74daf1382c2158606697a3a9daaa28146748c1d39c06b6fad5f97061b7",
+    "hash": "ddea44dea042fc6ef1d0211c3f130ed0881e69886c99a9eda29579b6c0f0a85d"
   }
 ]

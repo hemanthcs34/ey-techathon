@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, null, 2);
 
         } catch (error) {
-            console.error('API Error:', error);
+            console.error('API Error:', JSON.stringify(error, null, 2));
             const reason = error.reason || error.message || 'An unknown error occurred.';
             statusDisplay.innerHTML = `<p class="error"><strong>Application Failed</strong>: ${reason}</p>`;
             // Still display CIDs if the process failed midway but returned some

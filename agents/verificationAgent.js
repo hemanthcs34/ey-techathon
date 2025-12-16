@@ -14,7 +14,11 @@ async function verifyKYC(sessionId, kycDocuments) {
     const prompt = `Please verify the following KYC documents. PAN: "${pan}", Aadhaar: "${aadhaar}". A valid PAN has the format [A-Z]{5}[0-9]{4}[A-Z]{1}. A valid Aadhaar has 12 digits. Respond with a JSON object containing a "kycStatus" key which can be "verified" or "rejected", and a "reason" key explaining why. If both are valid, the status is "verified".`;
 
     const kycResultString = await callGemini(prompt);
-    const kycResult = JSON.parse(kycResultString);
+
+    // Clean the string to remove markdown formatting
+    const cleanedKycResultString = kycResultString.replace(/```json/g, '').replace(/```/g, '');
+    
+    const kycResult = JSON.parse(cleanedKycResultString);
     const { kycStatus } = kycResult;
 
     const kycDocumentHash = sha256(JSON.stringify(kycDocuments));
