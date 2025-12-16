@@ -35,16 +35,16 @@ app.post('/loan', async (req, res) => {
         cids.push({ step: 'consent', cid: consentCid }, { step: 'dataCollection', cid: interactionCid });
 
         // PHASE 3: KYC & Identity Verification
-        const { kycStatus } = await verifyKYC(sessionId, userData.kycDocuments);
+        const { kycStatus, reason: kycReason } = await verifyKYC(sessionId, userData.kycDocuments);
         if (kycStatus !== 'verified') {
-            return res.status(200).json({ status: 'rejected', reason: 'KYC failed', cids });
+            return res.status(200).json({ status: 'rejected', reason: kycReason || 'KYC failed', cids });
         }
 
         // PHASE 4: Credit Score & Financial Risk Analysis
         const creditCheck = await analyzeCredit(sessionId, userData);
         cids.push({ step: 'creditAnalysis', cid: creditCheck.creditData.cid });
         if (!creditCheck.riskAcceptable) {
-            return res.status(200).json({ status: 'rejected', reason: 'Credit risk not acceptable', cids });
+            return res.status(200).json({ status: 'rejected', reason: creditCheck.reason || 'Credit risk not acceptable', cids });
         }
         
         // PHASE 4 (cont.): Underwriting

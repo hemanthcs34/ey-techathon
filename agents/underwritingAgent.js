@@ -4,6 +4,23 @@ const { appendToLedger } = require('../blockchain/ledger');
 const { callGemini } = require('../utils/geminiClient');
 const { uploadJsonToPinata } = require('../utils/pinataClient');
 
+function parsePricingResponse(rawResponse) {
+    if (typeof rawResponse !== 'string') {
+        throw new Error('Pricing response is not a string');
+    }
+
+    const fencedMatch = rawResponse.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
+    const withoutFences = fencedMatch ? fencedMatch[1] : rawResponse;
+    const jsonBodyMatch = withoutFences.match(/\{[\s\S]*\}/);
+    const jsonCandidate = jsonBodyMatch ? jsonBodyMatch[0] : withoutFences;
+
+    try {
+        return JSON.parse(jsonCandidate);
+    } catch (error) {
+        throw new Error(`Unable to parse pricing response as JSON: ${error.message}`);
+    }
+}
+
 async function evaluateRiskAndPrice(sessionId, userData, creditData) {
     const { loanAmount } = userData;
     const { cibilScore, riskDecision } = creditData;
@@ -29,12 +46,16 @@ async function evaluateRiskAndPrice(sessionId, userData, creditData) {
     const prompt = `An applicant with CIBIL score ${cibilScore} and risk decision '${riskDecision}' is applying for a loan of ${loanAmount}. The applicable policy is ${JSON.stringify(policy)}. Based on this, determine the interest rate. For 'low' risk, use the minimum rate from interestRateRange. For 'medium' risk, use the average of min and max from interestRateRange. Respond with a JSON object with an "interestRate" key. For example: {"interestRate": 8.5}`;
     
     const pricingResultString = await callGemini(prompt);
-    const { interestRate } = JSON.parse(pricingResultString);
+    const { interestRate } = parsePricingResponse(pricingResultString);
+
+    if (interestRate === undefined || interestRate === null || Number.isNaN(Number(interestRate))) {
+        throw new Error('Pricing response missing a valid interestRate');
+    }
 
     const offer = {
         sessionId,
         loanAmount,
-        interestRate: parseFloat(interestRate.toFixed(2)),
+        interestRate: parseFloat(Number(interestRate).toFixed(2)),
         term: 36 // months, could be part of policy
     };
 

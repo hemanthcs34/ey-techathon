@@ -5,6 +5,23 @@ const { callGemini } = require('../utils/geminiClient');
 const { uploadJsonToPinata } = require('../utils/pinataClient');
 const { sha256 } = require('../utils/hash');
 
+function parseRiskResponse(rawResponse) {
+    if (typeof rawResponse !== 'string') {
+        throw new Error('Risk response is not a string');
+    }
+
+    const fencedMatch = rawResponse.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
+    const withoutFences = fencedMatch ? fencedMatch[1] : rawResponse;
+    const jsonBodyMatch = withoutFences.match(/\{[\s\S]*\}/);
+    const jsonCandidate = jsonBodyMatch ? jsonBodyMatch[0] : withoutFences;
+
+    try {
+        return JSON.parse(jsonCandidate);
+    } catch (error) {
+        throw new Error(`Unable to parse risk response as JSON: ${error.message}`);
+    }
+}
+
 async function analyzeCredit(sessionId, userData) {
     const { cibilScore } = userData;
 
@@ -17,12 +34,21 @@ async function analyzeCredit(sessionId, userData) {
     const prompt = `Analyze the credit risk for a user with CIBIL score ${cibilScore}. The applicable policy is: ${JSON.stringify(policy)}. Based on this, is the risk 'low', 'medium', or 'high'? A score above 750 is low risk. If no policy is found, it is high risk. Respond with a JSON object with a "riskDecision" key. For example: {"riskDecision": "low"}`;
 
     const riskDecisionString = await callGemini(prompt);
-    const { riskDecision } = JSON.parse(riskDecisionString);
+    const { riskDecision } = parseRiskResponse(riskDecisionString);
+
+    if (!riskDecision) {
+        throw new Error('Credit risk response missing riskDecision');
+    }
+
+    const riskReason = riskDecision === 'high'
+        ? `Risk decision '${riskDecision}' for CIBIL ${cibilScore}${policy ? ` under policy ${policy.policyId}` : ' with no matching policy'}`
+        : undefined;
 
     const creditData = {
         sessionId,
         cibilScore,
         riskDecision,
+        riskReason,
         policyId: policy ? policy.policyId : null
     };
 
@@ -38,7 +64,8 @@ async function analyzeCredit(sessionId, userData) {
 
     return { 
         riskAcceptable: riskDecision !== 'high',
-        creditData
+        creditData,
+        reason: riskReason
     };
 }
 

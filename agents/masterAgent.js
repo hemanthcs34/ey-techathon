@@ -4,6 +4,23 @@ const { sha256 } = require('../utils/hash');
 const { callGemini } = require('../utils/geminiClient');
 const { uploadJsonToPinata } = require('../utils/pinataClient');
 
+function parseJsonResponse(rawResponse, label) {
+    if (typeof rawResponse !== 'string') {
+        throw new Error(`${label} response is not a string`);
+    }
+
+    const fencedMatch = rawResponse.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
+    const withoutFences = fencedMatch ? fencedMatch[1] : rawResponse;
+    const jsonBodyMatch = withoutFences.match(/\{[\s\S]*\}/);
+    const jsonCandidate = jsonBodyMatch ? jsonBodyMatch[0] : withoutFences;
+
+    try {
+        return JSON.parse(jsonCandidate);
+    } catch (error) {
+        throw new Error(`Unable to parse ${label} response as JSON: ${error.message}`);
+    }
+}
+
 async function detectLoanIntent(query) {
     const prompt = `Based on the user query, what is the intent? Query: "${query}". Respond with a single word from this list: "loanApplication", "loanStatus", "generalInquiry", "unknown".`;
     const intentResult = await callGemini(prompt);
@@ -27,7 +44,7 @@ async function detectLoanIntent(query) {
 async function presentAndNegotiateOffer(sessionId, offer) {
     const prompt = `A user is presented with a loan offer. The user can accept, reject, or negotiate. Here is the offer: ${JSON.stringify(offer)}. The user's policy is to accept if the interest rate is below 10%, otherwise they reject. What is the user's response? Respond with a JSON object that is the original offer object, plus a "userResponse" key ("accepted" or "rejected") and a "reason" key if rejected.`;
     const negotiationResult = await callGemini(prompt);
-    const negotiatedOffer = JSON.parse(negotiationResult);
+    const negotiatedOffer = parseJsonResponse(negotiationResult, 'negotiation');
 
     const interaction = {
         agent: 'masterAgent',
