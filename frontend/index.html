@@ -16,9 +16,32 @@
             <form id="loan-form">
                 <input type="text" id="user-message" placeholder="Type your loan request, e.g., 'I need a loan'" required>
                 <input type="text" id="name" placeholder="Full Name" required>
-                <input type="text" id="pan" placeholder="PAN Number" required>
-                <input type="text" id="aadhaar" placeholder="Aadhaar Number" required>
-                <input type="number" id="cibil" placeholder="CIBIL Score" required>
+                <label for="aadhaar-file">Aadhaar Card:</label>
+                <input type="file" id="aadhaar-file" required>
+                <label for="pan-file">PAN Card:</label>
+                <input type="file" id="pan-file" required>
+                <fieldset>
+                    <legend>Required Supporting Documents for Credit Assessment</legend>
+                    <p class="hint">Provide the following documents to help calculate a credit score (CIBIL-like):</p>
+
+                    <label for="bank-statements">Bank Statements (last 3-6 months):</label>
+                    <input type="file" id="bank-statements" multiple accept=".pdf,.jpg,.png" required>
+
+                    <label for="salary-slips">Salary Slips (last 3 months) — for salaried applicants:</label>
+                    <input type="file" id="salary-slips" multiple accept=".pdf,.jpg,.png">
+
+                    <label for="itr-files">Income Tax Returns (ITR) — for self-employed / additional proof:</label>
+                    <input type="file" id="itr-files" multiple accept=".pdf,.jpg,.png">
+
+                    <label for="bank-proof">Cancelled Cheque / Bank Passbook (for account verification):</label>
+                    <input type="file" id="bank-proof" accept=".pdf,.jpg,.png">
+
+                    <label for="address-proof">Address Proof (utility bill, passport, driver's license):</label>
+                    <input type="file" id="address-proof" accept=".pdf,.jpg,.png">
+
+                    <label for="credit-report">Credit Report (optional, if you have one):</label>
+                    <input type="file" id="credit-report" accept=".pdf,.jpg,.png">
+                </fieldset>
                 <input type="number" id="income" placeholder="Monthly Income" required>
                 <select id="employment-type" required>
                     <option value="" disabled selected>Employment Type</option>

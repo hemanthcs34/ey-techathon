@@ -77,15 +77,82 @@ document.addEventListener('DOMContentLoaded', () => {
     async function handleLoanApplication() {
         showLoading(true);
 
+        const aadhaarFile = document.getElementById('aadhaar-file').files[0];
+        const panFile = document.getElementById('pan-file').files[0];
+        const otherDocuments = document.getElementById('other-documents') ? document.getElementById('other-documents').files : [];
+        const bankStatements = document.getElementById('bank-statements').files;
+        const salarySlips = document.getElementById('salary-slips').files;
+        const itrFiles = document.getElementById('itr-files').files;
+        const bankProofFile = document.getElementById('bank-proof').files[0];
+        const addressProofFile = document.getElementById('address-proof').files[0];
+        const creditReportFile = document.getElementById('credit-report').files[0];
+
+        let aadhaarCard = '';
+        if (aadhaarFile) {
+            aadhaarCard = await new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = (error) => reject(error);
+                reader.readAsDataURL(aadhaarFile);
+            });
+        }
+
+        let panCard = '';
+        if (panFile) {
+            panCard = await new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = (error) => reject(error);
+                reader.readAsDataURL(panFile);
+            });
+        }
+
+        // Helper to convert FileList to array of base64 strings
+        async function filesToBase64Array(files) {
+            if (!files || files.length === 0) return [];
+            return Promise.all(Array.from(files).map(file => {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result.split(',')[1]);
+                    reader.onerror = (error) => reject(error);
+                    reader.readAsDataURL(file);
+                });
+            }));
+        }
+
+        const bankStatementStrings = await filesToBase64Array(bankStatements);
+        const salarySlipStrings = await filesToBase64Array(salarySlips);
+        const itrFileStrings = await filesToBase64Array(itrFiles);
+
+        const singleFileToBase64 = (file) => {
+            if (!file) return Promise.resolve('');
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = (error) => reject(error);
+                reader.readAsDataURL(file);
+            });
+        };
+
+        const bankProof = await singleFileToBase64(bankProofFile);
+        const addressProof = await singleFileToBase64(addressProofFile);
+        const creditReport = await singleFileToBase64(creditReportFile);
+
         const requestBody = {
             message: document.getElementById('user-message').value,
             userData: {
                 name: document.getElementById('name').value,
-                kycDocuments: {
-                    pan: document.getElementById('pan').value,
-                    aadhaar: document.getElementById('aadhaar').value
+                documents: {
+                    aadhaarCard,
+                    panCard,
+                    bankStatements: bankStatementStrings,
+                    salarySlips: salarySlipStrings,
+                    itrFiles: itrFileStrings,
+                    bankProof,
+                    addressProof,
+                    creditReport,
+                    otherDocuments: otherDocuments && otherDocuments.length ? await filesToBase64Array(otherDocuments) : []
                 },
-                cibilScore: parseInt(document.getElementById('cibil').value, 10),
                 income: parseInt(document.getElementById('income').value, 10),
                 employmentType: document.getElementById('employment-type').value,
                 city: document.getElementById('city').value,
@@ -121,6 +188,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 status: result.status,
                 loanId: result.loanId
             }, null, 2);
+
+            // Save dashboard info and redirect to dashboard page
+            const dashboardData = {
+                loanId: result.loanId,
+                loanAmount: result.loanAmount,
+                monthlyEmi: result.monthlyEmi,
+                remainingInstallments: result.remainingInstallments,
+                nextInstallmentDate: result.nextInstallmentDate,
+                ongoingLoans: result.ongoingLoans
+            };
+            localStorage.setItem('loanDashboard', JSON.stringify(dashboardData));
+            // Give user a moment to read then redirect
+            setTimeout(() => { window.location.href = '/dashboard.html'; }, 600);
 
         } catch (error) {
             console.error('API Error:', JSON.stringify(error, null, 2));

@@ -48,6 +48,47 @@ form {
     gap: 1rem;
 }
 
+fieldset {
+    border: 1px solid #e9ecef;
+    padding: 1rem;
+    border-radius: 6px;
+    background: #fcfdff;
+}
+
+fieldset legend {
+    font-weight: 600;
+    color: #005f73;
+}
+
+.hint {
+    margin: 0 0 0.5rem 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+input[type="file"] {
+    padding: 0.5rem 0.25rem;
+    border: 1px dashed #dfe6ea;
+    border-radius: 4px;
+    background: #fff;
+}
+
+@media (min-width: 700px) {
+    fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem 1rem;
+        align-items: center;
+    }
+    fieldset label { margin-bottom: 0; }
+}
+
 input[type="text"],
 input[type="number"],
 select {

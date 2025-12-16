@@ -3,7 +3,7 @@
   "loanPolicies": [
     {
       "policyId": "LP001",
-      "minCreditScore": 650,
+      "minFinancialHealthScore": 5,
       "maxLoanAmount": 50000,
       "interestRateRange": {
         "min": 3.5,
@@ -12,7 +12,7 @@
     },
     {
       "policyId": "LP002",
-      "minCreditScore": 720,
+      "minFinancialHealthScore": 8,
       "maxLoanAmount": 200000,
       "interestRateRange": {
         "min": 2.8,

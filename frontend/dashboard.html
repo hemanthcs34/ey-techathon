@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Your Loan Dashboard</h1>
+    </header>
+    <main>
+        <section id="dashboard">
+            <h2>Active Loan</h2>
+            <div id="loan-summary">
+                <p><strong>Loan ID:</strong> <span id="loan-id"></span></p>
+                <p><strong>Loan Amount:</strong> <span id="loan-amount"></span></p>
+                <p><strong>Monthly EMI:</strong> <span id="monthly-emi"></span></p>
+                <p><strong>Remaining Installments:</strong> <span id="remaining-installments"></span></p>
+                <p><strong>Next Installment Date:</strong> <span id="next-installment"></span></p>
+                <p><strong>Number of Ongoing Loans:</strong> <span id="ongoing-loans"></span></p>
+            </div>
+            <div id="dashboard-actions">
+                <button id="back-to-apply">Apply for another loan</button>
+            </div>
+        </section>
+    </main>
+    <script src="dashboard.js"></script>
+</body>
+</html>

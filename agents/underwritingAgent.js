@@ -6,7 +6,8 @@ const { uploadJsonToPinata } = require('../utils/pinataClient');
 
 async function evaluateRiskAndPrice(sessionId, userData, creditData) {
     const { loanAmount } = userData;
-    const { cibilScore, riskDecision } = creditData;
+    const { riskDecision, bankStatementAnalysis } = creditData;
+    const { financialHealthScore } = bankStatementAnalysis;
 
     if (riskDecision === 'high') {
         const decision = { eligibility: false, reason: "High risk profile" };
@@ -16,17 +17,17 @@ async function evaluateRiskAndPrice(sessionId, userData, creditData) {
     }
 
     const policy = policies.loanPolicies.find(p => 
-        cibilScore >= p.minCreditScore && loanAmount <= p.maxLoanAmount
+        financialHealthScore >= p.minFinancialHealthScore && loanAmount <= p.maxLoanAmount
     );
 
     if (!policy) {
-        const decision = { eligibility: false, reason: "Loan amount or credit score does not meet policy requirements." };
+        const decision = { eligibility: false, reason: "Loan amount or financial health score does not meet policy requirements." };
         const cid = await uploadJsonToPinata({ sessionId, decision });
         appendToLedger('underwriting_ledger', { agent: 'underwritingAgent', action: 'evaluateRiskAndPrice', sessionId, decision: 'ineligible', cid });
         return decision;
     }
 
-    const prompt = `An applicant with CIBIL score ${cibilScore} and risk decision '${riskDecision}' is applying for a loan of ${loanAmount}. The applicable policy is ${JSON.stringify(policy)}. Based on this, determine the interest rate. For 'low' risk, use the minimum rate from interestRateRange. For 'medium' risk, use the average of min and max from interestRateRange. Respond with a JSON object with an "interestRate" key. For example: {"interestRate": 8.5}`;
+    const prompt = `An applicant with a financial health score of ${financialHealthScore} and risk decision '${riskDecision}' is applying for a loan of ${loanAmount}. The applicable policy is ${JSON.stringify(policy)}. Based on this, determine the interest rate. For 'low' risk, use the minimum rate from interestRateRange. For 'medium' risk, use the average of min and max from interestRateRange. Respond with a JSON object with an "interestRate" key. For example: {"interestRate": 8.5}`;
     
     const pricingResultString = await callGemini(prompt);
     const { interestRate } = JSON.parse(pricingResultString);
@@ -54,3 +55,4 @@ async function evaluateRiskAndPrice(sessionId, userData, creditData) {
 }
 
 module.exports = { evaluateRiskAndPrice };
+

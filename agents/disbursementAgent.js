@@ -56,6 +56,7 @@ async function disburseFunds(sessionId, loanId, sanctionLetter) {
         disbursementStatus: 'completed', 
         transactionId,
         monthlyEmi,
+        emiSchedule: schedule,
         disbursementCid: cid
     };
 }

@@ -4,26 +4,24 @@ const policies = require('../rag/policies.json');
 const { callGemini } = require('../utils/geminiClient');
 const { uploadJsonToPinata } = require('../utils/pinataClient');
 const { sha256 } = require('../utils/hash');
+const { analyzeBankStatement } = require('./bankStatementAgent');
 
 async function analyzeCredit(sessionId, userData) {
-    const { cibilScore } = userData;
+    const bankStatementAnalysis = await analyzeBankStatement(sessionId, userData);
 
-    if (typeof cibilScore !== 'number') {
-        throw new Error("CIBIL score is required for credit analysis.");
+    let riskDecision;
+    if (bankStatementAnalysis.financialHealthScore >= 8) {
+        riskDecision = 'low';
+    } else if (bankStatementAnalysis.financialHealthScore >= 5) {
+        riskDecision = 'medium';
+    } else {
+        riskDecision = 'high';
     }
-
-    const policy = policies.loanPolicies.find(p => cibilScore >= p.minCreditScore);
-
-    const prompt = `Analyze the credit risk for a user with CIBIL score ${cibilScore}. The applicable policy is: ${JSON.stringify(policy)}. Based on this, is the risk 'low', 'medium', or 'high'? A score above 750 is low risk. If no policy is found, it is high risk. Respond with a JSON object with a "riskDecision" key. For example: {"riskDecision": "low"}`;
-
-    const riskDecisionString = await callGemini(prompt);
-    const { riskDecision } = JSON.parse(riskDecisionString);
 
     const creditData = {
         sessionId,
-        cibilScore,
+        bankStatementAnalysis,
         riskDecision,
-        policyId: policy ? policy.policyId : null
     };
 
     const cid = await uploadJsonToPinata(creditData);
@@ -43,3 +41,4 @@ async function analyzeCredit(sessionId, userData) {
 }
 
 module.exports = { analyzeCredit };
+
